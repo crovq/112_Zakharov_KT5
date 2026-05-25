@@ -208,10 +208,10 @@ int main() {
 
     IntArray a2(a1);
 
-    cout << "a1 == a2? " << (a1 == a2) << endl;  // 1 (true)
+    cout << "a1 == a2? " << (a1 == a2) << endl;
 
     a2[0] = 99;
-    cout << "a1 != a2? " << (a1 != a2) << endl;  // 1 (true)
+    cout << "a1 != a2? " << (a1 != a2) << endl;
 
 
     // === пункт b ===
