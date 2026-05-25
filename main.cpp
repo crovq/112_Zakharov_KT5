@@ -46,7 +46,7 @@ public:
     }
 
     // == проверка на равенство
-    bool operator==(const IntArray& other) const {
+    bool operator==(IntArray& other) {
         if (size != other.size) return false;
         for (int i = 0; i < size; i++) {
             if (data[i] != other.data[i]) return false;
@@ -54,11 +54,11 @@ public:
         return true;
     }
 
-    bool operator!=(const IntArray& other) const {
+    bool operator!=(IntArray& other) {
         return !(*this == other);
     }
 
-    int getSize() const { return size; }
+    int getSize() { return size; }
 };
     
 // === пункт b ===
@@ -95,14 +95,14 @@ public:
     static double getMaxLength() { return maxLength; }
     static void resetMaxLength() { maxLength = 0; }
 
-    double getX() const { return x; }
-    double getY() const { return y; }
+    double getX() { return x; }
+    double getY() { return y; }
 
 
-    bool operator==(const Vector2D& other) const {
+    bool operator==(Vector2D& other) {
         return (x == other.x) && (y == other.y);
     }
-    bool operator!=(const Vector2D& other) const {
+    bool operator!=(Vector2D& other) {
         return !(*this == other);
     }
 };
@@ -128,12 +128,12 @@ public:
         cout << "3D Vector: (" << getX() << ", " << getY() << ", " << z << "), len = " << length() << endl;
     }
 
-    double getZ() const { return z; }
+    double getZ() { return z; }
 
-    bool operator==(const Vector3D& other) {
+    bool operator==(Vector3D& other) {
         return (getX() == other.getX()) && (getY() == other.getY()) && (z == other.z);
     }
-    bool operator!=(const Vector3D& other) {
+    bool operator!=(Vector3D& other) {
         return !(*this == other);
     }
 };
@@ -155,7 +155,7 @@ public:
         }
     }
 
-    Array(const Array& other) : size(other.size) {
+    Array(Array& other) : size(other.size) {
         data = new T[size];
         for (int i = 0; i < size; i++) {
             data[i] = other.data[i];
@@ -179,7 +179,7 @@ public:
     }
 
     // ==
-    bool operator==(const Array& other) const {
+    bool operator==(Array& other) {
         if (size != other.size) return false;
         for (int i = 0; i < size; i++) {
             if (data[i] != other.data[i]) return false;
@@ -188,11 +188,11 @@ public:
     }
 
     // !=
-    bool operator!=(const Array& other) const {
+    bool operator!=(Array& other) {
         return !(*this == other);
     }
 
-    int getSize() const { return size; }
+    int getSize() { return size; }
 
 
 };
